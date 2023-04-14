@@ -13,6 +13,7 @@ try:
     content = "username=" + inputBuffer + "&password=A"
 
     buffer = "POST /login HTTP/1.1\r\n"
+    buffer += "Content-Type: application/x-www-form-urlencoded\r\n"
     buffer += "\r\n"
 
     buffer += content
