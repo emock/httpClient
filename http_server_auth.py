@@ -3,6 +3,7 @@
 
 # https://gist.github.com/mauler/593caee043f5fe4623732b4db5145a82
 
+# python3 -m http_server_auth
 
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, test
