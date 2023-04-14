@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import socket
 
-IP = "127.0.0.1"
-PORT = 8000
+IP = input("IP\n")
+PORT = input("PORT\n")
 
 try:
     print("\nSending evil buffer ")
