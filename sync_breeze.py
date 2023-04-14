@@ -12,10 +12,10 @@ try:
 
     content = "username=" + inputBuffer + "&password=A"
 
-    buffer = "POST / HTTP/1.1\r\n"
+    buffer = "POST /login HTTP/1.1\r\n"
     buffer += "\r\n"
 
-    # buffer += content
+    buffer += content
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
