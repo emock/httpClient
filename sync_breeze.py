@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import socket
 
-
+IP = "192.168/156.10"
 
 try:
     print("\nSending evil buffer ")
