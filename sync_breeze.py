@@ -44,6 +44,6 @@ while (size < 2000):
 
         print("Done")
 
-except:
-    print("Could not connect")
-    sys.exit()
+    except:
+        print("Could not connect")
+        sys.exit()
