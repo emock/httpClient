@@ -10,8 +10,7 @@ size = 100
 
 while (size < 2000):
     try:
-        print("\nSending evil buffer ")
-
+        print(f"\nSending evil buffer with {size} bytes, ")
 
         inputBuffer = "A"*size
 
