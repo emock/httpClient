@@ -36,7 +36,7 @@ try:
 
     s.connect(("192.168.121.10", 80))
 
-    s.send(buffer)
+    s.send(buffer.encode("ascii"))
 
     s.close()
 
