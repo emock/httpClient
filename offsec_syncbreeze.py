@@ -5,7 +5,7 @@ try:
     print
     "\nSending evil buffer..."
 
-    size = 100
+    size = 800
 
     inputBuffer = "A" * size
 
