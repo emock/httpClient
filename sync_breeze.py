@@ -60,7 +60,7 @@ try:
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    s.connect(("127.0.0.1", 80))
+    s.connect(("192.168.144.10", 80))
 
     s.send(buffer.encode("latin-1"))
 
